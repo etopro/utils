@@ -14,4 +14,4 @@ CONFIG_PATH="$RCLONE_CONF_PATH"
 } > "$CONFIG_PATH"
 
 echo "rclone config written to $CONFIG_PATH"
-cat "$CONFIG_PATH"
+cat "$CONFIG_PATH" | sed -E '/[Kk][Ee][Yy]/s/(=).*/= [redacted]/'
